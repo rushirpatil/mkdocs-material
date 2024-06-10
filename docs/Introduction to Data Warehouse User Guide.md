@@ -59,7 +59,7 @@ ReactorCX data warehouse data model consists of following subject areas:
 
 - Loyalty References Data
 
-# Querying data for Metrics
+## Querying data for Metrics
 
 ## Tools for Querying
 

@@ -145,7 +145,7 @@ AND delete_flag <> 'Y' -- To get only non-deleted records from purse_policies
 
 **<u>Sample Data:</u>**
 
-| **POLICY \_NAME** | **policy_description** | **effective_from**     | **expiration_dt**          | **pt_multiplier** | **policy_group_name** | **period_start_date**  | **period_end_date**        |
+| **policy_name**   | **policy_description** | **effective_from**     | **expiration_dt**          | **pt_multiplier** | **policy_group_name** | **period_start_date**  | **period_end_date**        |
 |-------------------|------------------------|------------------------|----------------------------|-------------------|-----------------------|------------------------|----------------------------|
 | Deferred Debits   | Deferred Debits        | 2000-01-01 00:00:00+00 | 3000-01-01 23:59:59.999+00 | 10000.000         |                       |                        |                            |
 | Tier Credits 2024 | Tier Credits 2024      | 2000-01-01 00:00:00+00 | 3000-01-01 23:59:59.999+00 | 10000.000         | Tier Credits          | 2024-01-01 08:00:00+00 | 2025-01-01 07:59:59.999+00 |

@@ -584,7 +584,7 @@ AND member_loyalty_ids.loyalty_id IN ('70628001') -- To filter based on loyalty_
 
 **<u>Sample Data:</u>** 
 
-| **loyalty_id** | **PREV_TIER_LEVEL** | **CURRENT_TIER_LEVEL** | **ASSIGN_DATE**            |
+| **loyalty_id** | **prev_tier_level** | **current_tier_level** | **assign_date**            |
 |----------------|---------------------|------------------------|----------------------------|
 | 70628001       | Sapphire            | Sapphire               | 2016-08-23 13:09:34.593+00 |
 | 70628001       | Sapphire            | Pearl                  | 2023-01-01 12:08:33+00     |
