@@ -1,0 +1,26 @@
+.md-header__button.md-logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    width: auto;
+    height: 300px; /* Adjust the height as needed */
+}
+
+.md-nav__title img {
+    height: 300px; /* Adjust the height to match the header */
+    width: auto;  /* Keep the aspect ratio */
+}
+
+
+/* Custom toggle switch size */
+:root {
+    --mdc-switch-width: 72px; /* Set the width */
+    --mdc-switch-height: 48px; /* Set the height */
+    --mdc-switch-handle-width: 24px; /* Set the handle width */
+    --mdc-switch-handle-height: 24px; /* Set the handle height */
+}
+
+/* Adjust the switch handle position */
+.mdc-switch.mdc-switch--checked .mdc-switch__thumb {
+    left: calc(var(--mdc-switch-width) - var(--mdc-switch-handle-width));
+}

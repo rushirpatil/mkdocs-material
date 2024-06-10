@@ -1,0 +1,16 @@
+/* Use logo as toggle switch */
+.mdc-switch__native-control:checked + .mdc-switch__background {
+    background-image: url("C:\Users\Rpatil\PycharmProjects\RCX Redshift Documentation\docs\Images\Toggle Switch Logo.png"); /* Adjust the path to your logo */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mdc-switch__background {
+    border-radius: 0; /* Optional: Remove border radius */
+}
+
+/* Hide the switch handle */
+.mdc-switch__native-control + .mdc-switch__background .mdc-switch__thumb {
+    display: none;
+}
