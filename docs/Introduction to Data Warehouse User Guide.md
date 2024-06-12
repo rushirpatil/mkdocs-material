@@ -1,4 +1,4 @@
-# ReactorCX Data Warehouse User Guide
+# Data Warehouse User Guide
 
 # Introduction
 
@@ -46,24 +46,21 @@ data elements. A well-designed data model ensures data accuracy,
 consistency, and efficient retrieval. It forms the foundation for
 accurate reporting and meaningful insights.
 
-Link:  [RCX Data
-Model](https://loyaltymethods.sharepoint.com/:u:/s/RCXHydTeam/EbGXd9APhzJHtMrQ_w7hwAsBaUjr7oxv8Nw1vZgnphZ-Ag?e=6M9k0I)
+Data warehouse data model consists of following subject areas:
 
-ReactorCX data warehouse data model consists of following subject areas:
+- Members
 
-- Loyalty Members
+- Activities
 
-- Loyalty Activities
+- Programs
 
-- Loyalty Programs
-
-- Loyalty References Data
+- References Data
 
 ## Querying data for Metrics
 
 ## Tools for Querying
 
-Use below SQL-based tool to query RCX data:
+Use below SQL-based tool to query data:
 
 - SQL workbench
 

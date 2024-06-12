@@ -1,10 +1,10 @@
-site_name: RCX Redshift Documentation
+site_name: Redshift Documentation
 nav:
-  - ReactorCX Data Warehouse User Guide: 'Introduction to Data Warehouse User Guide.md'
+  - Data Warehouse User Guide: 'Introduction to Data Warehouse User Guide.md'
   - Foundation Level Queries:
-      - Loyalty Members: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Loyalty Members.md'
-      - Loyalty Activities: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Loyalty Activities.md'
-      - Loyalty Programs: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Loyalty Programs.md'
+      - Members: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Members.md'
+      - Activities: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Activities.md'
+      - Programs: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Programs.md'
 
 theme:
   name: material
