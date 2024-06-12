@@ -1,0 +1,1647 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../Introduction%20to%20Data%20Warehouse%20User%20Guide/">
+      
+      
+        <link rel="next" href="../Division%202/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>Division 1 - Redshift Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../custom/custom.css">
+    
+      <link rel="stylesheet" href="../../../custom/footer.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Redshift Documentation" class="md-header__button md-logo" aria-label="Redshift Documentation" data-md-component="logo">
+      
+  <img src="../../../Images/RCX_Logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Redshift Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Division 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Redshift Documentation" class="md-nav__button md-logo" aria-label="Redshift Documentation" data-md-component="logo">
+      
+  <img src="../../../Images/RCX_Logo.png" alt="logo">
+
+    </a>
+    Redshift Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introduction%20to%20Data%20Warehouse%20User%20Guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Warehouse User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Foundation Level Queries
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Foundation Level Queries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Division 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Division 1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprehensive-insights-of-members_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprehensive Insights of members_data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comprehensive Insights of members_data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#employee_ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      employee_ids
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#members_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      members_data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#member_wallets" class="md-nav__link">
+    <span class="md-ellipsis">
+      member_wallets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#member_levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      member_levels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#member_level_histories" class="md-nav__link">
+    <span class="md-ellipsis">
+      member_level_histories
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Division%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Division 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Division%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Division 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprehensive-insights-of-members_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprehensive Insights of members_data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comprehensive Insights of members_data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#employee_ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      employee_ids
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#members_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      members_data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#member_wallets" class="md-nav__link">
+    <span class="md-ellipsis">
+      member_wallets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#member_levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      member_levels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#member_level_histories" class="md-nav__link">
+    <span class="md-ellipsis">
+      member_level_histories
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Division 1</h1>
+
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>members_data refers to the segment of a program dedicated to
+understanding and engaging with members_data who actively participate in the
+program. It focuses on analyzing member behavior, preferences, and
+interactions to tailor personalized experiences that enhance loyalty. By
+analyzing member data and preferences, the program can deliver
+personalized offers such as discounts, promotions, or bonus points on
+products or services that align with individual interests and purchase
+history.</p>
+<h3 id="comprehensive-insights-of-members_data">Comprehensive Insights of members_data<a class="headerlink" href="#comprehensive-insights-of-members_data" title="Permanent link">&para;</a></h3>
+<h4 id="employee_ids"><strong>employee_ids</strong><a class="headerlink" href="#employee_ids" title="Permanent link">&para;</a></h4>
+<p>A emp_id is a unique identifier associated with a member and it is
+used to identify a member during a transaction. A member could have
+multiple emp_ids associated with him/her. A emp_id could be a
+members_datahip card number, phone number, email, Facebook ID, twitter
+handler, etc.</p>
+<p><strong>LIST OF TABLES:</strong> The table employee_ids is employed to retrieve
+the relevant fields</p>
+<ul>
+<li>employee_ids</li>
+</ul>
+<p>Loyalty information can be retrieved from the database in a few
+different ways, as listed below.</p>
+<ul>
+<li><em>How to retrieve member loyalty information based on emp_id ?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SELECT emp_id,
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cust_id,
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>emp_id_name,
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>status,
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>is_primary
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>FROM schema_name.employee_ids
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from employee_ids
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>AND emp_id = &#39;6898566527c0484f1ff1c&#39; -- To filter based on emp_id
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>emp_id</strong></th>
+<th><strong>cust_id</strong></th>
+<th><strong>emp_id_name</strong></th>
+<th><strong>status</strong></th>
+<th><strong>is_primary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6898566527c0484f1ff1c</td>
+<td>94568566ba0744e7d65603</td>
+<td>CardID</td>
+<td>Active</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve emp_ids associated with a member based on
+    cust_id value?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>SELECT cust_id,
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>emp_id,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>emp_id_name,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>status,
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>is_primary
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>FROM schema_name.employee_ids
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from employee_ids
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>AND cust_id = &#39;94568566ba0744e7d65603&#39; -- To filter based on cust_id
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>cust_id</strong></th>
+<th><strong>emp_id</strong></th>
+<th><strong>emp_id_name</strong></th>
+<th><strong>status</strong></th>
+<th><strong>is_primary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>94568566ba0744e7d65603</td>
+<td>hpp1758799</td>
+<td>CardID</td>
+<td>Lost_Stolen</td>
+<td>false</td>
+</tr>
+<tr>
+<td>94568566ba0744e7d65603</td>
+<td>kft3720300098</td>
+<td>CardID</td>
+<td>Active</td>
+<td>true</td>
+</tr>
+<tr>
+<td>94568566ba0744e7d65603</td>
+<td>815htr46904</td>
+<td>AlternateID</td>
+<td>Active</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve total number of cards for each emp_id_name?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>SELECT emp_id_name,
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>COUNT(*) AS total_cards
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>FROM schema_name.employee_ids
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from employee_ids
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>GROUP BY 1;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>emp_id_name</strong></th>
+<th><strong>total_cards</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlternateID</td>
+<td>5,651</td>
+</tr>
+<tr>
+<td>CardID</td>
+<td>33,879</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve total number of cards for each card_status?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>SELECT status AS card_status,
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>COUNT(*) AS total_cards
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>FROM schema_name.employee_ids
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from emp_ids
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>GROUP BY 1;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>card_status</strong></th>
+<th><strong>total_cards</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Active</td>
+<td>39,420</td>
+</tr>
+<tr>
+<td>Locked</td>
+<td>110</td>
+</tr>
+</tbody>
+</table>
+<h4 id="members_data"><strong>members_data</strong><a class="headerlink" href="#members_data" title="Permanent link">&para;</a></h4>
+<p>The existing consumers who register for the programs of client are identified as members_data of Organization.</p>
+<p><strong>LIST OF TABLES:</strong> The below mentioned fields can be retrieved by performing joins across the indicated tables.</p>
+<ul>
+<li>
+<p>members_data</p>
+</li>
+<li>
+<p>employee_ids</p>
+</li>
+</ul>
+<p>members_data details data can be retrieved in a few different ways, as listed
+below.</p>
+<ul>
+<li><em>How to retrieve members_data based on emp_id?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>SELECT members_data.id AS cust_id,
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>employee_ids.emp_id,
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>members_data.member_status,
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>members_data.enrollment_date
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>FROM schema_name.members_data
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>INNER JOIN schema_name.employee_ids
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>ON members_data.id = employee_ids.cust_id
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>WHERE members_data.delete_flag &lt;&gt; &#39;Y&#39;-- To get only non-deleted records from members_data
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>AND emp_id = &#39;a2g30k20098&#39; -- To filter based on emp_id
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>cust_id</strong></th>
+<th><strong>emp_id</strong></th>
+<th><strong>member_status</strong></th>
+<th><strong>enrollment_date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8768a9965fhf45d4051</td>
+<td>a2g30k20098</td>
+<td>Active</td>
+<td>2004-12-17 05:00:00+00</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve members_data info based on cust_id?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>SELECT id AS cust_id,
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>member_status,
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>enrollment_date
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>FROM schema_name.members_data
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from members_data
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>AND id = &#39;90701a99fshj7245d4051&#39;-- To filter based on id
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>cust_id</strong></th>
+<th><strong>member_status</strong></th>
+<th><strong>enrollment_date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9560c0df1a9sjcu7245d4051</td>
+<td>Active</td>
+<td>2004-12-17 05:00:00+00</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve the list of members_data enrolled on a certain enrollment_date?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>SELECT id AS cust_id,
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>member_status,
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>enrollment_date,
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>enrollment_source
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>FROM schema_name.members_data
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from members_data
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>AND enrollment_date ::DATE BETWEEN &#39;2023-07-31&#39; AND &#39;2023-09-08&#39; -- To filter by start and end dates of the enrollment_date
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>cust_id</strong></th>
+<th><strong>member_status</strong></th>
+<th><strong>enrollment_date</strong></th>
+<th><strong>enrollment_source</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>907698368hafca147f6c86ee</td>
+<td>PreEnrolled</td>
+<td>2023-07-31 00:00:00+00</td>
+<td>HPNS Lookup</td>
+</tr>
+<tr>
+<td>457698368hafca147f6c86ee</td>
+<td>Active</td>
+<td>2023-07-31 00:00:00+00</td>
+<td>HPNS Lookup</td>
+</tr>
+<tr>
+<td>6782698368hafca147f6c86e</td>
+<td>Active</td>
+<td>2023-07-31 00:00:00+00</td>
+<td>UCD</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve total number of members_data enrolled in each month based on enrollment_date in a given year ?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>SELECT TO_CHAR(enrollment_date::DATE,&#39;mon-yyyy&#39;) AS enrollment_date,
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>COUNT(*) AS total_members_data
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>FROM schema_name.members_data
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>WHERE DATE_PART(year,enrollment_date::DATE) BETWEEN &#39;2022&#39; AND &#39;2023&#39; -- To filter based on enrollment_date
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>AND delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from members_data
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>GROUP BY 1;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>enrollment_date</strong></th>
+<th><strong>total_members_data</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan-22</td>
+<td>1,866</td>
+</tr>
+<tr>
+<td>Jan-23</td>
+<td>3,733</td>
+</tr>
+<tr>
+<td>Feb-22</td>
+<td>4,881</td>
+</tr>
+<tr>
+<td>Feb-23</td>
+<td>2,759</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve total number of members_data enrolled via different enrollment_source?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>SELECT enrollment_source,
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>COUNT(*) AS total_members_data
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>FROM schema_name.members_data
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from members_data
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>GROUP BY 1;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>enrollment_source</strong></th>
+<th><strong>total_members_data</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HPNS Conversion</td>
+<td>23,958</td>
+</tr>
+<tr>
+<td>HPNS Lookup</td>
+<td>20,256</td>
+</tr>
+<tr>
+<td>UCD</td>
+<td>25,527</td>
+</tr>
+<tr>
+<td>Unknown</td>
+<td>21,402</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve total number of members_data enrolled using different enrollment_channel’s ?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>SELECT enrollment_channel,
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>COUNT(*) AS total_members_data
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>FROM schema_name.members_data
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from members_data
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>GROUP BY 1;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>enrollment_channel</strong></th>
+<th><strong>total_members_data</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WCON</td>
+<td>24,532</td>
+</tr>
+<tr>
+<td>WWEB</td>
+<td>12,978</td>
+</tr>
+<tr>
+<td>ORET</td>
+<td>14,222</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve total number of members_data for each member_status?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>SELECT member_status,
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>COUNT(*) AS total_members_data
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>FROM schema_name.members_data
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from members_data
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>GROUP BY 1;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>member_status</strong></th>
+<th><strong>total_members_data</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PreEnrolled</td>
+<td>18,409</td>
+</tr>
+<tr>
+<td>Terminated</td>
+<td>113</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>21,008</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve number of members_data deleted ?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>SELECT delete_flagAS delete_status,
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>COUNT(*) AS total_members_data
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>FROM schema_name.members_data
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>WHERE delete_flag= &#39;Y&#39; -- To get only deleted records from members_data
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>GROUP BY 1;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>delete_status</strong></th>
+<th><strong>total_members_data</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Y</td>
+<td>1,785,679</td>
+</tr>
+</tbody>
+</table>
+<h4 id="member_wallets"><strong>member_wallets</strong><a class="headerlink" href="#member_wallets" title="Permanent link">&para;</a></h4>
+<p>wallets are virtual containers or buckets that contain the points earned
+by the member. A member can have multiple wallets, each wallet can contain
+points earned for different transactions.</p>
+<p><strong>LIST OF TABLES:</strong> The table member_wallets is employed to retrieve the relevant fields</p>
+<ul>
+<li>
+<p>member_wallets</p>
+</li>
+<li>
+<p>employee_ids</p>
+</li>
+</ul>
+<p>wallet and their balance data can be retrieved from the database in a few
+different ways, as listed below.</p>
+<ul>
+<li><em>How to retrieve all the wallets of a member using emp_id?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>SELECT employee_ids.emp_id,
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>member_wallets.wallet_policy_id,
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>member_wallets.wallet_name,
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>member_wallets.wallet_balance,
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>member_wallets.available_balance
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>FROM schema_name.member_wallets
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>INNER JOIN schema_name.employee_ids
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>ON member_wallets.cust_id = employee_ids.cust_id
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>WHERE emp_id IN (&#39;89771089785fh2&#39;) -- To filter based on emp_id
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>AND member_wallets.delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_wallets
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>emp_id</strong></th>
+<th><strong>wallet_policy_id</strong></th>
+<th><strong>wallet_name</strong></th>
+<th><strong>wallet_balance</strong></th>
+<th><strong>available_balance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>89771089785fh2</td>
+<td>6jeg5c2459ca0027fa78d9</td>
+<td>Points</td>
+<td>2232</td>
+<td>2232</td>
+</tr>
+<tr>
+<td>89771089785fh2</td>
+<td>96019d5c245rda0027fa78da</td>
+<td>Body Armor Club</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>89771089785fh2</td>
+<td>6jg19d5c245rha0027fa78dd</td>
+<td>Beverage Club</td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve all the wallet details of a member based on cust_id?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>SELECT cust_id,
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>wallet_policy_id,
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>wallet_name,
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>wallet_balance,
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>available_balance
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>FROM schema_name.member_wallets
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>WHERE cust_id IN (&#39;84576358ccaaffar501a8ab&#39;) -- To filter based on cust_id
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>AND delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_wallets
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>cust_id</strong></th>
+<th><strong>wallet_policy_id</strong></th>
+<th><strong>wallet_name</strong></th>
+<th><strong>wallet_balance</strong></th>
+<th><strong>available_balance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>84576358ccaaffar501a8ab</td>
+<td>0079d5c2459cafa78d8uh</td>
+<td>Frito Lay Club</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>84576358ccaaffar501a8ab</td>
+<td>00419d5c2459ca0027fa7</td>
+<td>Points</td>
+<td>2,232</td>
+<td>2,232</td>
+</tr>
+<tr>
+<td>84576358ccaaffar501a8ab</td>
+<td>47919d5c2459ca0027fa78</td>
+<td>Beverage Club</td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve the total balance available on each wallet?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>SELECT wallet_name,
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>wallet_policy_id,
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>SUM(wallet_balance) wallet_balance,
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>SUM(available_balance) available_balance
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>FROM schema_name.member_wallets
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_wallets
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>GROUP BY 1,
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>2;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>wallet_name</strong></th>
+<th><strong>wallet_policy_id</strong></th>
+<th><strong>wallet_balance</strong></th>
+<th><strong>available_balance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US Alto Club 33273</td>
+<td>6068e13c20c6ker62ef5c5</td>
+<td>1923</td>
+<td>1923</td>
+</tr>
+<tr>
+<td>US CarWash Card</td>
+<td>6282bf77b68e8c0bh47f1ca</td>
+<td>22537</td>
+<td>22537</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve the total accrued points on each wallet?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>SELECT wallet_name,
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>wallet_policy_id,
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>SUM(accrued_pts) AS total_accrued_pts
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>FROM schema_name.member_wallets
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_wallets
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>GROUP BY 1, 2;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>wallet_name</strong></th>
+<th><strong>wallet_policy_id</strong></th>
+<th><strong>total_accrued_pts</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US Pizza Punch Card</td>
+<td>9087913c20c6002683u</td>
+<td>144132</td>
+</tr>
+<tr>
+<td>CA Coke Punch</td>
+<td>8969bd532a5c65adra6</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve the total redeemed points on each wallet?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>SELECT wallet_name,
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>wallet_policy_id,
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>SUM(redeemed_pts) AS total_redeemed_pts
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>FROM schema_name.member_wallets
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_wallets
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>GROUP BY 1,
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>2;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>wallet_name</strong></th>
+<th><strong>wallet_policy_id</strong></th>
+<th><strong>total_redeemed_pts</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US Celsius 11th Free Punch</td>
+<td>9685gf81106c7c5c0024d1</td>
+<td>111,370</td>
+</tr>
+<tr>
+<td>US Pizza 8th Free Punch</td>
+<td>y86h9e376a16b0027a7e8</td>
+<td>10,594,255</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve the total expired points on each wallet?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>SELECT wallet_name,
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>wallet_policy_id,
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>SUM(expired_points) AS total_expired_points
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>FROM schema_name.member_wallets
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member wallets
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>GROUP BY 1, 2;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>wallet_name</strong></th>
+<th><strong>wallet_policy_id</strong></th>
+<th><strong>total_expired_points</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US Coke 11th Free Punch</td>
+<td>693g1106c7c000026890</td>
+<td>48,562</td>
+</tr>
+<tr>
+<td>CA 7th Coffee Punch</td>
+<td>628308b5d170200281e1</td>
+<td>476,247</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>How to retrieve the number of members_data whose wallet balance is not zero?</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>SELECT wallet_name,
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>COUNT(DISTINCT cust_id) AS members_data_count
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>FROM schema_name.member_wallets
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>WHERE available_balance  &lt;&gt; 0 -- To filter based on available balance
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>AND delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_wallets
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>GROUP BY 1;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>wallet_name</strong></th>
+<th><strong>members_data_count</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monster Java Club</td>
+<td>490,974</td>
+</tr>
+<tr>
+<td>Stokers Club</td>
+<td>27,984</td>
+</tr>
+<tr>
+<td>Tourney Club</td>
+<td>39,609</td>
+</tr>
+</tbody>
+</table>
+<h4 id="member_levels"><strong>member_levels</strong><a class="headerlink" href="#member_levels" title="Permanent link">&para;</a></h4>
+<p>member_levels is an attribute associated with a member to define an order between levels by ranking them in order of achievement and categorizing/grouping them based on the achievements of the member.</p>
+<p>A member_level that is assigned to a member based on their engagement with the program.</p>
+<p><strong>LIST OF TABLES:</strong> The below mentioned fields can be retrieved by performing joins across the indicated tables.</p>
+<ul>
+<li>
+<p>member_levels</p>
+</li>
+<li>
+<p>employee_ids</p>
+</li>
+</ul>
+<p>member_levels data can be retrieved from the database in a few different ways, as listed below.</p>
+<p><em>* How to retrieve the member_level details of a member using their emp_id?</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>SELECT employee_ids.emp_id,
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>member_levels.member_level_policy_level_id,
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>member_levels.prev_level_name,
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>member_levels.level_number,
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>member_levels.level_name,
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>member_levels.achieved_on_utc_ts,
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>member_levels.requal_on_utc_ts
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>FROM schema_name.member_levels
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>INNER JOIN schema_name.employee_ids
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>ON member_levels.cust_id = employee_ids.cust_id
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>WHERE employee_ids.emp_id IN (&#39;7te28001&#39;) -- To filter based on emp_id
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>AND member_levels.delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_levels
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>emp_id</strong></th>
+<th><strong>member_level_policy_level_id</strong></th>
+<th><strong>prev_level_name</strong></th>
+<th><strong>level_number</strong></th>
+<th><strong>level_name</strong></th>
+<th><strong>achieved_on_utc_ts</strong></th>
+<th><strong>requal_on_utc_ts</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7te28001</td>
+<td>89066d7328034c0aklreb0f</td>
+<td>Sapphire</td>
+<td>2</td>
+<td>Pearl</td>
+<td>2023-01-01 12:08:33+00</td>
+<td>2025-02-01 07:59:59.999+00</td>
+</tr>
+</tbody>
+</table>
+<p><em>* How to retrieve member member_levels based on cust_id?</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>SELECT cust_id,
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>member_level_policy_level_id,
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>prev_level_name,
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>level_number,
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>level_name,
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>achieved_on_utc_ts,
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>requal_on_utc_ts
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>FROM schema_name.member_levels
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_levels
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>AND cust_id = &#39;907c0df1a996fsg244aw1&#39; -- To filter based on cust_id
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>cust_id</strong></th>
+<th><strong>member_level_policy_level_id</strong></th>
+<th><strong>prev_level_name</strong></th>
+<th><strong>level_number</strong></th>
+<th><strong>level_name</strong></th>
+<th><strong>achieved_on_utc_ts</strong></th>
+<th><strong>requal_on_utc_ts</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>907c0df1a996fsg244aw1</td>
+<td>jkd5b245rt0027fa78d7</td>
+<td></td>
+<td>1</td>
+<td>Welcome</td>
+<td>2019-01-01 00:00:00+00</td>
+<td>3000-01-01 00:00:00+00</td>
+</tr>
+</tbody>
+</table>
+<p><em>* How to retrieve total no of member_levels for each level_name?</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>SELECT level_name,
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>COUNT(*) AS total_members_data
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>FROM schema_name.member_levels
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_levels
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>GROUP BY 1;
+</code></pre></div></p>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th>level_name</th>
+<th>total_members_data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sapphire</td>
+<td>59,711,897</td>
+</tr>
+<tr>
+<td>NOIR - No EC</td>
+<td>2,026</td>
+</tr>
+<tr>
+<td>Gold</td>
+<td>238,532</td>
+</tr>
+</tbody>
+</table>
+<p><em>* How to retrieve total no of member_levels achieved based on achieved_on_utc_ts?</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>SELECT TO_CHAR(achieved_on_utc_ts::DATE,&#39;mon-yyyy&#39;) AS
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>achieved_on_utc_ts,
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>COUNT(*) AS total_member_levels_achieved
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>FROM schema_name.member_levels
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_levels
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>AND DATE_PART(year,achieved_on_utc_ts :: DATE) BETWEEN &#39;2022&#39; AND &#39;2023&#39; -- To filter based on achieved_on_utc_ts
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>GROUP BY 1;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>achieved_on_utc_ts</strong></th>
+<th><strong>total_member_levels_achieved</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apr-2022</td>
+<td>303,484</td>
+</tr>
+<tr>
+<td>Apr-2023</td>
+<td>296,561</td>
+</tr>
+<tr>
+<td>Aug-2022</td>
+<td>216,669</td>
+</tr>
+<tr>
+<td>Aug-2023</td>
+<td>275,699</td>
+</tr>
+</tbody>
+</table>
+<h4 id="member_level_histories"><strong>member_level_histories</strong><a class="headerlink" href="#member_level_histories" title="Permanent link">&para;</a></h4>
+<p>The member_level_histories tracks each member's member_level changes over time.
+It includes the assigned member_levels, and dates of assignment. This detailed
+record allows for monitoring the progression and status of members_data
+within the program, ensuring an accurate historical account of
+member_level adjustments.</p>
+<p><strong>LIST OF TABLES:</strong> The aforementioned fields can be retrieved by
+performing joins across the indicated tables.</p>
+<ul>
+<li>
+<p>member_level_histories</p>
+</li>
+<li>
+<p>employee_ids</p>
+</li>
+</ul>
+<p>member_level history information can be retrieved from the database in a few
+different ways, as listed below.</p>
+<p><em>* How to retrieve the member_levels assigned to a member based on their emp_id?</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>SELECT employee_ids.emp_id,
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>member_level_histories.prev_member_level_level,
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>member_level_histories.current_member_level_level,
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>member_level_histories.assign_date
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>FROM schema_name.member_level_histories mt
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>INNER JOIN schema_name.employee_ids mli
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>ON member_level_histories.cust_id = employee_ids.cust_id
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>WHERE member_level_histories.delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_level_histories
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>AND employee_ids.emp_id IN (&#39;aj28001&#39;) -- To filter based on emp_id
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong> </p>
+<table>
+<thead>
+<tr>
+<th><strong>emp_id</strong></th>
+<th><strong>prev_member_level_level</strong></th>
+<th><strong>current_member_level_level</strong></th>
+<th><strong>assign_date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aj28001</td>
+<td>Sapphire</td>
+<td>Sapphire</td>
+<td>2016-08-23 13:09:34.593+00</td>
+</tr>
+<tr>
+<td>aj28001</td>
+<td>Sapphire</td>
+<td>Pearl</td>
+<td>2023-01-01 12:08:33+00</td>
+</tr>
+</tbody>
+</table>
+<p><em>* How to retrieve the member_level change histories for a member using their cust_id?</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>SELECT cust_id,
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>prev_member_level_level,
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>current_member_level_level,
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>assign_date
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>FROM schema_name.member_level_histories
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>WHERE delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_level_histories
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>AND cust_id IN (&#39;79766041drh1a04cdd92a&#39;) -- To filter based on cust_id
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>cust_id</strong></th>
+<th><strong>prev_member_level_level</strong></th>
+<th><strong>current_member_level_level</strong></th>
+<th><strong>assign_date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>79766041drh1a04cdd92a</td>
+<td>Sapphire</td>
+<td>Sapphire</td>
+<td>2016-08-23 13:09:34.593+00</td>
+</tr>
+<tr>
+<td>79766041drh1a04cdd92a</td>
+<td>Sapphire</td>
+<td>Pearl</td>
+<td>2023-01-01 12:08:33+00</td>
+</tr>
+</tbody>
+</table>
+<p><em>* How to retrieve the member_levels assigned to a member based on assign_date?</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>SELECT assign_date,
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>cust_id,
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>prev_member_level_level,
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>current_member_level_level
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>FROM schema_name.member_level_histories
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>WHERE assign_date::DATE = &#39;2022-08-01&#39; -- To filter based on assign_date
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>AND delete_flag &lt;&gt; &#39;Y&#39; -- To get only non-deleted records from member_level_histories
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>;
+</code></pre></div>
+<p><strong><u>Sample Data:</u></strong> </p>
+<table>
+<thead>
+<tr>
+<th><strong>assign_date</strong></th>
+<th><strong>cust_id</strong></th>
+<th><strong>prev_member_level_level</strong></th>
+<th><strong>current_member_level_level</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022-08-01 07:00:00+00</td>
+<td>6588847961325210fc30</td>
+<td>Sapphire</td>
+<td>Pearl</td>
+</tr>
+<tr>
+<td>2022-08-01 00:19:04.062+00</td>
+<td>8962a5d9d03a422f239b</td>
+<td>Sapphire</td>
+<td>Pearl</td>
+</tr>
+<tr>
+<td>2022-08-01 22:12:31.623+00</td>
+<td>67843c8c45a043avhf43</td>
+<td>Platinum</td>
+<td>Platinum - No EC</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../../../custom/footer.js"></script>
+      
+    
+  </body>
+</html>
