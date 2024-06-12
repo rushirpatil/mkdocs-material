@@ -1,5 +1,3 @@
-# Members Data
-
 ### Introduction
 
 members_data refers to the segment of a program dedicated to

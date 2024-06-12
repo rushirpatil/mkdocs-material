@@ -2,9 +2,9 @@ site_name: Redshift Documentation
 nav:
   - Data Warehouse User Guide: 'Introduction to Data Warehouse User Guide.md'
   - Foundation Level Queries:
-      - Members: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Members.md'
-      - Activities: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Activities.md'
-      - Programs: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Programs.md'
+      - Division 1: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Division 1.md'
+      - Division 2: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Division 2.md'
+      - Division 3: 'ReactorCX Data Warehouse User Guide/Foundation Level Queries/Division 3.md'
 
 theme:
   name: material

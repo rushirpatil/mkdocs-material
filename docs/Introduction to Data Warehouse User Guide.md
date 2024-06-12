@@ -5,7 +5,7 @@
 ## Purpose of this Guide
 
 Welcome to the Data Warehouse User Guide! This document aims to provide
-users with an understanding of the ReactorCX data warehouse, its
+users with an understanding of the data warehouse, its
 architecture, and how to derive meaningful insights through querying.
 You will learn about various scenarios, metrics, and how to write
 queries to extract valuable information from the data model.
@@ -38,7 +38,7 @@ mastering intricate data retrieval scenarios through sophisticated table
 joins and nuanced filtering techniques.
 
 
-## Understanding ReactorCX Data Model
+## Understanding Data Model
 
 A data model is a visual and structural representation of how data is
 organized in a database. It defines the relationships between different
@@ -48,13 +48,13 @@ accurate reporting and meaningful insights.
 
 Data warehouse data model consists of following subject areas:
 
-- Members
+- Division 1
 
-- Activities
+- Division 2
 
-- Programs
+- Division 3
 
-- References Data
+- Division 4
 
 ## Querying data for Metrics
 
