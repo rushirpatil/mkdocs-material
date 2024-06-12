@@ -13,28 +13,28 @@ trust and loyalty between customers and brands.
 
 ## Comprehensive Insights of Programs
 
-####  **location_overrides**
+####  **loc_overrides**
 
-location_overrides provide targeted rewards or deals that are
+loc_overrides provide targeted rewards or deals that are
 constrained to specific geographic areas, utilizing location-specific
 data to customize offerings for customers in those regions
 
-**LIST OF TABLES:** The table for location_overrides is employed to
+**LIST OF TABLES:** The table for loc_overrides is employed to
 fetch the corresponding fields mentioned above.
 
-- location_overrides
+- loc_overrides
 
-* location_overrides Details data can be retrieved in a few different ways, as listed below.
+* loc_overrides Details data can be retrieved in a few different ways, as listed below.
 
-* _How to retrieve the location_overrides details?_
+* _How to retrieve the loc_overrides details?_
 
 ```
 SELECT location_id,
 target_id,
 target_type,
 optin_flag
-FROM schema_name.location_overrides
-WHERE delete_flag <> 'Y' --To get only non-deleted records from location_overrides
+FROM schema_name.loc_overrides
+WHERE delete_flag <> 'Y' --To get only non-deleted records from loc_overrides
 ;
 ```
 
